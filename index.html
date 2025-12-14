@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hungry Island</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="bg-music" loop>
+        <source src="horror_music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="game-container">
+        
+        <div id="start-screen" class="screen active">
+            <h1 class="title">The Hungry Island</h1>
+            <div class="img-container">
+                <img src="img1.jpg" alt="Intro Image">
+            </div>
+            <div class="instructions">
+                <h2>SURVIVAL INSTRUCTIONS</h2>
+                <p>1. You have <strong>10 Minutes</strong> to escape.</p>
+                <p>2. Choose your answers carefully. One wrong move could be fatal.</p>
+                <p>3. Hints only appear if you fail an attempt.</p>
+                <p>4. Turn your sound ON.</p>
+            </div>
+            <button class="btn start-btn" onclick="startGame()">ENTER THE ISLAND</button>
+        </div>
+
+        <div id="game-screen" class="screen hidden">
+            <div class="hud">
+                <span id="timer">10:00</span>
+                <span id="progress">Q: 1/7</span>
+            </div>
+            
+            <div class="question-area">
+                <div class="img-container">
+                    <img id="q-img" src="" alt="Question Image">
+                </div>
+                <p id="question-text"></p>
+                
+                <div id="options-container" class="options-grid">
+                    </div>
+
+                <div id="hint-box" class="hint hidden">
+                    <p><strong>HINT:</strong> <span id="hint-text"></span></p>
+                </div>
+                
+                <p id="feedback-msg"></p>
+            </div>
+        </div>
+
+        <div id="end-screen" class="screen hidden">
+            <h1 class="title red-text">ESCAPED... FOR NOW.</h1>
+            <div class="final-message">
+                <p>"Every path upward ends in watching Not moving.</p>
+                <p>I am not the start,</p>
+                <p>But I end all climbs."</p>
+            </div>
+            <button class="btn" onclick="location.reload()">PLAY AGAIN</button>
+        </div>
+
+        <div id="game-over-screen" class="screen hidden">
+            <h1 class="title red-text">TIME IS UP</h1>
+            <p>The island has consumed you.</p>
+            <button class="btn" onclick="location.reload()">TRY AGAIN</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
